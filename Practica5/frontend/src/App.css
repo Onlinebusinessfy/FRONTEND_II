@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #111827;
+  color: white;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 3rem;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filters input,
+.filters select {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  width: 250px;
+  font-size: 1rem;
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #1f2937;
+  border-radius: 16px;
+  padding: 20px;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(0,0,0,.3);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: #60a5fa;
+}
+
+.card p {
+  margin: 8px 0;
+}
+
+.available {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.sold {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.pagination button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.pagination button:disabled {
+  background: #4b5563;
+  cursor: not-allowed;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 1.5rem;
+  color: #9ca3af;
+}
