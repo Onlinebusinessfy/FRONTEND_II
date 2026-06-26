@@ -109,3 +109,63 @@ h1 {
   font-size: 1.5rem;
   color: #9ca3af;
 }
+
+.theory {
+  margin-top: 60px;
+  background: #1f2937;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.theory h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #60a5fa;
+  margin-bottom: 30px;
+}
+
+.theory h3 {
+  color: #f3f4f6;
+  font-size: 1.15rem;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  border-left: 4px solid #2563eb;
+  padding-left: 12px;
+}
+
+.theory p {
+  color: #d1d5db;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-left: 16px;
+}
+
+.theory-btn {
+  display: block;
+  margin: 40px auto 0;
+  padding: 14px 28px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.theory-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.4);
+}
+
+.theory-btn:active {
+  transform: translateY(0);
+}
+
+.theory-btn:focus {
+  outline: none;
+}

@@ -3,9 +3,11 @@ import CarList from "./components/CarList";
 import Pagination from "./components/Pagination";
 import FilterBar from "./components/FilterBar";
 import EmptyState from "./components/EmptyState";
+import Theory from "./components/Theory";
 import "./App.css";
 
 function App() {
+  const [showTheory, setShowTheory] = useState(false);
 
   const [cars, setCars] = useState([]);
   const [next, setNext] = useState(null);
@@ -17,7 +19,6 @@ function App() {
   const loadCars = async (
     url = "http://localhost:8000/api/cars/"
   ) => {
-
     const response = await fetch(url);
     const data = await response.json();
 
@@ -30,8 +31,7 @@ function App() {
     loadCars();
   }, []);
 
-  const filteredCars = cars.filter(car => {
-
+  const filteredCars = cars.filter((car) => {
     const matchesSearch =
       car.brand.toLowerCase().includes(search.toLowerCase()) ||
       car.model.toLowerCase().includes(search.toLowerCase());
@@ -44,9 +44,16 @@ function App() {
     return matchesSearch && matchesAvailability;
   });
 
+  if (showTheory) {
+    return (
+      <div className="container">
+        <Theory goBack={() => setShowTheory(false)} />
+      </div>
+    );
+  }
+
   return (
     <div className="container">
-
       <h1>Car Agency</h1>
 
       <FilterBar
@@ -56,11 +63,11 @@ function App() {
         setAvailability={setAvailability}
       />
 
-      {
-        filteredCars.length > 0
-        ? <CarList cars={filteredCars} />
-        : <EmptyState />
-      }
+      {filteredCars.length > 0 ? (
+        <CarList cars={filteredCars} />
+      ) : (
+        <EmptyState />
+      )}
 
       <Pagination
         previous={previous}
@@ -68,8 +75,14 @@ function App() {
         loadPage={loadCars}
       />
 
+      <button
+        className="theory-btn"
+        onClick={() => setShowTheory(true)}
+      >
+        Ver respuestas teóricas
+      </button>
     </div>
-  )
+  );
 }
 
 export default App;
